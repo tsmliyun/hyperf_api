@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 /**
  * This file is part of Hyperf.
  *
@@ -14,7 +15,7 @@ use Hyperf\Contract\StdoutLoggerInterface;
 use Psr\Log\LogLevel;
 
 return [
-    'app_name' => env('APP_NAME', 'skeleton'),
+    'app_name'                   => env('APP_NAME', 'skeleton'),
     StdoutLoggerInterface::class => [
         'log_level' => [
             LogLevel::ALERT,
@@ -27,4 +28,17 @@ return [
             LogLevel::WARNING,
         ],
     ],
+
+    /**
+     * 聚合API
+     */
+    'ju_he_api' => [
+        'weather' => [
+            'app_key' => 'fe375b864e61809670180a7613f473cf',
+            'app_url' => 'http://apis.juhe.cn/',
+        ],
+    ],
+
+
+
 ];

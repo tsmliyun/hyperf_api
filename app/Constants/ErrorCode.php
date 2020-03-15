@@ -24,4 +24,9 @@ class ErrorCode extends AbstractConstants
      * @Message("Server Error！")
      */
     const SERVER_ERROR = 500;
+
+    const SERVER_SUCCESS = 200;
+
+    const SUCCESS_STATUS = 'ok';
+    const ERROR_STATUS = 'error';
 }
