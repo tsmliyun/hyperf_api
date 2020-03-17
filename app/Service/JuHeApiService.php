@@ -12,8 +12,10 @@ class JuHeApiService extends HttpService
 
     public function __construct()
     {
+        parent::__construct();
         $this->appKey = config('ju_he_api.weather.app_key');
         $this->appUrl = config('ju_he_api.weather.app_url');
+
     }
 
     /**
@@ -28,14 +30,10 @@ class JuHeApiService extends HttpService
             'key'  => $this->appKey
         ];
 
-        $header = [
-            'Content-Type' => 'application/json;charset=utf-8',
-        ];
-
         $url = 'simpleWeather/query';
         $url .= '?city=' . $data['city'] . '&key=' . $data['key'];
 
-        $result = $this->httpGet($this->appUrl, $url, $data, $header);
+        $result = $this->httpPost($this->appUrl, $url, $data);
 
         return $result;
     }
